@@ -12,7 +12,8 @@ import json
 import ctypes, threading
 
 from utils import get_encoding_type, get_all_headers, unwrap_nester_hierarchy, check_nested_hierarchy, unwrap_nester_hierarchy_in_row
-#
+from updater import update
+
 # from utils import get_encoding_type, get_ddl_type, get_engine_type
 # from updater import update
 
@@ -79,7 +80,6 @@ class JsonParserApp:
                         writer = csv.writer(csvfile)
                         writer.writerow(headers)
                         for row in data:
-                            print(row)
                             writer.writerow([[row.get(key, None) for key in headers]])        #rowdict.get(key, self.restval) for key in self.fieldnames          #writer.writerow([list(row.values())]) #[value for value in row.values()]
 
                     #df = pandas.read_json(self.filepath, lines=True, encoding=get_encoding_type(self.filepath))
@@ -101,11 +101,8 @@ def main():
     root.mainloop()
 
 
+
+
 if __name__ == "__main__":
-    # success, message = update()
-    # if success:
-    #     print(message)
-    # else:
-    #     print("Failed:", message)
+    update()
     main()
-    
