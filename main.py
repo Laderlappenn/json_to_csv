@@ -31,14 +31,14 @@ class JsonParserApp:
         self.select_button = tk.Button(master, text="Select File", command=self.select_file)
         self.select_button.pack(padx=(10, 10), pady=(10, 10))
 
-        self.generate_button = tk.Button(master, text="Generate CSV file from JSON", command=self.parse_json)
+        self.generate_button = tk.Button(master, text="Generate CSV file from JSON", command=self.generate_json)
         self.generate_button.pack(padx=(35, 35), pady=(10, 25))
 
     def select_file(self):
         self.filepath = filedialog.askopenfilename(filetypes=self.filetypes)
         self.label.config(text="Выбранный файл: " + self.filepath)
 
-    def parse_json(self):
+    def generate_json(self):
         try:
             if self.filepath:
                 if self.filepath.endswith('.json'):
