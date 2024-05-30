@@ -6,7 +6,7 @@ from flatten_json import flatten
 
 
 def unwrap_nester_hierarchy_in_row(dict_row) -> None:
-    dict_row = flatten(dict_row)
+    return flatten(dict_row)
 
 
 def unwrap_nester_hierarchy(data) -> None:
